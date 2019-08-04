@@ -3,9 +3,9 @@ from pyforms.controls import ControlCheckBox
 from pyforms.controls import ControlAutoComplete
 from pyforms_web.widgets.django import ModelAdminWidget
 
-from research.models import Publication, Group
+from research.models import Publication
 
-from humanresources.models import Person
+from people.models import Person, Group
 
 from .publication_form import PublicationFormWidget
 

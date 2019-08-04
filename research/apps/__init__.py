@@ -1,3 +1,7 @@
+from confapp import conf
+from . import settings
+conf += settings
+
 from .researchgroups            import ResearchGroupsListWidget
 from .journals.journals_list    import JournalListWidget
 from .reports.publications      import PublicationsReports

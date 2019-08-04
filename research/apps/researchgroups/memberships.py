@@ -4,7 +4,7 @@ from pyforms.controls import ControlCheckBox
 from pyforms_web.web.middleware import PyFormsMiddleware
 from pyforms_web.widgets.django import ModelAdminWidget
 
-from research.models import GroupMember
+from people.models import GroupMember
 
 
 class MembershipsListWidget(ModelAdminWidget):

@@ -1,7 +1,7 @@
 from confapp import conf
 from pyforms_web.widgets.django import ModelAdminWidget
 
-from research.models import Group as ResearchGroup
+from people.models import Group as ResearchGroup
 
 from .researchgroups_form import ResearchGroupFormWidget
 

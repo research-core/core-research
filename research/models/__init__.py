@@ -1,6 +1,5 @@
 from .publication.publication import Publication, PubType
 from .project import Project
-from .group.group import Group, GroupType, GroupMember, MemberCategory
 from .journal import Journal, JournalImpactFactor, JournalAlias
 from .author_alias import AuthorAlias
 

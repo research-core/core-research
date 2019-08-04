@@ -9,7 +9,6 @@ class Project(models.Model):
     """
 
     project_id = models.AutoField(primary_key=True)             #: ID
-    group = models.ForeignKey('Group', verbose_name='Group', on_delete=models.CASCADE)    #: Fk to the Group table. e.g. Lima
     project_name = models.CharField('Project', max_length=200)  #: Name
     project_desc = models.TextField('Description', default='')  #: Description of the Project
     project_collaborators = models.CharField('Collaborators', max_length=200, blank=True, null=True)    #: Name of the collaborators of the Project
@@ -17,7 +16,8 @@ class Project(models.Model):
     project_order = models.IntegerField('Order', blank=True, null=True)                                 #: Number of orders e.g. 3
     project_active = models.NullBooleanField('Active')                                                      #: Check Box Is the Project is Active?
 
-    contract = models.ForeignKey('humanresources.Contract', verbose_name='Contract', blank=True, null=True, on_delete=models.CASCADE)
+    group = models.ForeignKey('people.Group', verbose_name='Group',
+                              on_delete=models.CASCADE)  #: Fk to the Group table. e.g. Lima
 
     class Meta:
         ordering = ['project_name',]

@@ -1,7 +1,7 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 
-from common.models import Permissions
+from permissions.models import Permission
 
 from .publication_queryset import PublicationQuerySet
 
@@ -63,7 +63,7 @@ class Publication(models.Model):
 
 
     journal = models.ForeignKey('Journal', on_delete=models.CASCADE)                                                  #: Fk to the Journal table e.g. Nature
-    authors = models.ManyToManyField('humanresources.Person', verbose_name='CNP Authors', help_text='Select the CNP Authors of this publication.')
+    authors = models.ManyToManyField('people.Person', verbose_name='CNP Authors', help_text='Select the CNP Authors of this publication.')
 
     objects = PublicationQuerySet.as_manager()
 

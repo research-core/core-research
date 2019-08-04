@@ -9,7 +9,7 @@ from pyforms.controls import ControlEmptyWidget
 from confapp import conf
 from django.conf import settings
 from .search_publications import PubsList
-from humanresources.models import Person
+from people.models import Person
 from research.models import AuthorAlias
 
 

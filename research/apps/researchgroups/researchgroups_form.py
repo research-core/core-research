@@ -5,7 +5,7 @@ from pyforms.basewidget import segment
 from pyforms.controls import ControlImg
 from pyforms_web.widgets.django import ModelFormWidget
 
-from humanresources.models import Person
+from people.models import Person
 
 from .memberships import MembershipsListWidget
 from .projects import ProjectsListWidget
