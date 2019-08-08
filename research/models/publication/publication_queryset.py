@@ -38,7 +38,7 @@ class PublicationQuerySet(models.QuerySet):
         contenttype = ContentType.objects.get_for_model(self.model)
         authgroups  = user.groups.filter(permissions__content_type=contenttype)
         authgroups  = authgroups.filter(permissions_filter).distinct()
-        return Permissions.objects.filter(djangogroup__in=authgroups)
+        return Permission.objects.filter(djangogroup__in=authgroups)
 
 
     def __filter_by_permissions(self, user, perms):
@@ -55,7 +55,7 @@ class PublicationQuerySet(models.QuerySet):
 
                     now = timezone.now()
                     qs = self.filter(
-                        Q(authors__djangouser=user) |
+                        Q(authors__auth_user=user) |
                         Q(
                             authors__groupmember__date_joined__lte=now,
                             authors__groupmember__date_left__gte=now,
