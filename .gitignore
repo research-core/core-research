@@ -2,3 +2,7 @@
 *.pyc
 
 core_research\.egg-info/
+
+build/
+
+dist/
