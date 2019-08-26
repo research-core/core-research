@@ -38,7 +38,7 @@ class PublicationQuerySet(models.QuerySet):
         contenttype = ContentType.objects.get_for_model(self.model)
         authgroups  = user.groups.filter(permissions__content_type=contenttype)
         authgroups  = authgroups.filter(permissions_filter).distinct()
-        return Permission.objects.filter(djangogroup__in=authgroups)
+        return Permission.objects.filter(auth_group__in=authgroups)
 
 
     def __filter_by_permissions(self, user, perms):
